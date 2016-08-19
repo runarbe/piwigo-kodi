@@ -10,8 +10,7 @@ The add-on depends on the Kodi add-on "simplejson" to communicate with Piwigo..
 
 **Kodi add-on plugin.image.piwigo**
 
- - Download the add-on as a ZIP file from the [release page](https://github.com/abrenoch/piwigo-kodi/releases)
-   - (Right click on the "ZIP" icon and select "Download Linked File")
+ - Download the add-on as a ZIP file from GitHub
  - Open Kodi
  - Go to `System -> Settings -> Add-ons -> Install from zip file`
    - Select the previously download file 
@@ -20,6 +19,29 @@ The add-on depends on the Kodi add-on "simplejson" to communicate with Piwigo..
  - Go to `Picture -> Add-ons -> Browse Piwigo`
    - Enjoy
 
+Requirements to use size option
+------
+
+1) install/activate [extension by Piwigo Team] LocalFiles Editor from screen [Administration > Plugins > Manage]
+
+2) open [Administration > Plugins > LocalFiles Editor > Local config] and paste the following code:
+Code:
+
+````php
+$conf['question_mark_in_urls'] = false;
+$conf['php_extension_in_urls'] = false;
+$conf['category_url_style'] = 'id-name';
+$conf['picture_url_style'] = 'file';
+````
+
+3) create a .htaccess file in the root directory of your Piwigo installation or open the existing .htaccess file.
+Add the following two lines to the file and save it.
+
+````
+AcceptPathInfo On
+Options +MultiViews
+````
+   
 Support
 ------
 

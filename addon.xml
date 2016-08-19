@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.image.piwigo" name="Piwigo Browser" version="0.0.5" provider-name="Dave Anderson, Francois Lacroix">
+<addon id="plugin.image.piwigo" name="Piwigo Browser" version="0.0.6" provider-name="Dave Anderson, Francois Lacroix, Stein Runar Bergheim">
   <requires>
     <import addon="script.module.simplejson" version="2.0.10"/>
   </requires>
@@ -12,6 +12,6 @@
     <description>Browse catalogs from a piwigo server</description> 
     <license>GPL 2.0</license>
     <website>http://piwigo.org/ext/extension_view.php?eid=770</website>
-    <source>https://github.com/abrenoch/piwigo-kodi</source>
+    <source>https://github.com/runarbe/piwigo-kodi</source>
   </extension>
 </addon>
