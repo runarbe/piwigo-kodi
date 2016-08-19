@@ -6,5 +6,6 @@
         <setting label="33003" type="text" id="password" option="hidden" default=""/>
         <setting label="33004" type="lsep"/>
         <setting label="33005" type="slider" id="limit" default="20" range="10,10,100" option="int" />
+		<setting label="33006" type="select" id="photosize" default="medium" values="small|medium|large|original" />
     </category>
 </settings>

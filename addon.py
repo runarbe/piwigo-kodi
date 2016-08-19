@@ -122,13 +122,17 @@ def populateImages(imgs):
 			else :
 				ttl = img['date_creation']	
 		else :
-			ttl = img['name']		
+			ttl = img['name']
 		listitem = xbmcgui.ListItem(ttl,iconImage=img['derivatives']['thumb']['url'])
 		listitem.setInfo('pictures',{'date':img['date_available']})
 		commands = []
 		commands.append(( 'Modify Tags', 'runnerAdd', ))
 		listitem.addContextMenuItems( commands )
-		plugin.addDirectoryItem(url=img['element_url'], listitem=listitem)
+		psz = plugin.getSetting('photosize')
+		if (psz == 'original') :
+			plugin.addDirectoryItem(url=img['element_url'], listitem=listitem)
+		else :
+			plugin.addDirectoryItem(url=img['derivatives'][psz]['url'], listitem=listitem)
 	if(int(plugin.getSetting('limit')) <= int(imgs['paging']['count'])) :
 		listitem = xbmcgui.ListItem('> Next %s' % (plugin.getSetting('limit')))
 		newpath = plugin.path.split('/')
